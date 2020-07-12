@@ -5,6 +5,19 @@ load('LatScaled.mat')   %Loading .mat files that contain data
 load('LonScaled.mat')
 load('o3Scaled.mat')
 
+%o3Scaled format is = Time Model,700(Lon),400(Lat),Time (25 hours)
+
+disp('There are total of 7 models');
+modelnumber=0;
+x1=0;
+while modelnumber<=0 || modelnumber>7 % CHECKING ERROR
+if x1==1
+    disp('You entered wrong Input')
+end
+modelnumber=input('Please Enter Model No: ')
+x1=1;
+end
+
 %%
 % Create some data
 [X] = 30.05:0.1:69.95; % create X value
