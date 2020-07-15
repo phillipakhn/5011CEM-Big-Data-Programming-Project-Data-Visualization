@@ -36,6 +36,21 @@ mesh(X,Y,Z)
 %% Create a display of the data from the NetCDF files like this
 [X,Y] = meshgrid(X, Y);
 
+%City Advance visibility
+
+Visibilitycities='.';
+vis=input('Do you want to improve cites visibility Y/N = ','s');
+if vis=='Y'
+    Visibilitycities='O';
+else if vis=='N'
+    Visibilitycities='.';
+    
+else
+    disp('Using default in system');
+    pause(0.1)
+    end
+end
+
 figure(2);
 clf
 % Create the map
