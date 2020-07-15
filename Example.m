@@ -67,22 +67,45 @@ surfm(X, Y, Z, 'EdgeColor', 'none',...
 figure(3);
 clf
 
-% create the map
+% Create the map
 worldmap('Europe'); % set the part of the earth to show
+
 load coastlines
 plotm(coastlat,coastlon)
 
 land = shaperead('landareas', 'UseGeoCoords', true);
-geoshow(gca, land, 'FaceColor', [0.5 0.7 0.5])
+geoshow(gca, land, 'FaceColor', C1)
 
 lakes = shaperead('worldlakes', 'UseGeoCoords', true);
-geoshow(lakes, 'FaceColor', 'blue')
+geoshow(lakes, 'FaceColor', C2)
 
 rivers = shaperead('worldrivers', 'UseGeoCoords', true);
-geoshow(rivers, 'Color', 'blue')
+geoshow(rivers, 'Color', C3)
+
 
 cities = shaperead('worldcities', 'UseGeoCoords', true);
-geoshow(cities, 'Marker', '.', 'Color', 'red')
+geoshow(cities, 'Marker', Visibilitycities, 'Color', C4)
+
+% Plot the data
+surfm(X, Y, Z, 'EdgeColor', 'none',...
+    'FaceAlpha', 0.5) % edge colour outlines the edges, 'FaceAlpha', sets the transparency
+
+title(sprintf('Ozone activity at time %d:00 ', (i-1)));
+str = 'Lakes and Rivers = ';
+str=strcat(str,xxx);
+str2= 'Cities = Marker with Color ';
+str2=strcat(str2,yyy);
+str3='Ozone can be scene as variation of colors over map';
+dim = [.1 .5 .3 .3];
+dim2 = [.1 .54 .34 .34];
+dim3= [.1 .58 .38 .38];
+annotation('textbox',dim,'String',str,'FitBoxToText','on');
+annotation('textbox',dim2,'String',str2,'FitBoxToText','on');
+annotation('textbox',dim3,'String',str3,'FitBoxToText','on');
+pause(0.5)
+
+
+end
 
 % display the data
 NumContours = 10;
