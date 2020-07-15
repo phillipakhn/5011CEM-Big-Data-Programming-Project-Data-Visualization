@@ -45,35 +45,6 @@ load coastlines
 plotm(coastlat,coastlon)
 
 land = shaperead('landareas', 'UseGeoCoords', true);
-geoshow(gca, land, 'FaceColor', [0.5 0.7 0.5])
-
-lakes = shaperead('worldlakes', 'UseGeoCoords', true);
-geoshow(lakes, 'FaceColor', 'blue')
-
-rivers = shaperead('worldrivers', 'UseGeoCoords', true);
-geoshow(rivers, 'Color', 'blue')
-
-cities = shaperead('worldcities', 'UseGeoCoords', true);
-geoshow(cities, 'Marker', '.', 'Color', 'red')
-
-% Plot the data
-surfm(X, Y, Z, 'EdgeColor', 'none',...
-    'FaceAlpha', 0.5) % edge colour outlines the edges, 'FaceAlpha', sets the transparency
-
-%% Plot contour map
-% [X,Y] = meshgrid(X, Y); % this calculation has been carried out above
-% already
-
-figure(3);
-clf
-
-% Create the map
-worldmap('Europe'); % set the part of the earth to show
-
-load coastlines
-plotm(coastlat,coastlon)
-
-land = shaperead('landareas', 'UseGeoCoords', true);
 geoshow(gca, land, 'FaceColor', C1)
 
 lakes = shaperead('worldlakes', 'UseGeoCoords', true);
