@@ -66,6 +66,17 @@ else
     end
 end
 
+%COLOR BLINDNESS CODE
+
+disp('');
+disp('Please Enter:')
+disp('1 for Red-Green Color Blindness');
+disp('2 for Blue-Yellow Color Blindness');
+disp('3 for Total Color Blindness ');
+disp('4 for Normal Vision ');
+statusCB=input(' Status = ');
+%https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7
+
 figure(2);
 clf
 % Create the map
