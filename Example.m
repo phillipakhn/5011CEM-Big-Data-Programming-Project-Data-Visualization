@@ -20,20 +20,35 @@ end
 
 %%
 % Create some data
-[X] = 30.05:0.1:69.95; % create X value
-[Y] = -24.95:0.1:44.95;% create Y values
-% create a mesh of values
-Z = peaks(700);
-Z = Z(:,151:550);
+[X] = double(LatScaled); % create X value
+[Y] = double(LonScaled);% create Y values
+clear LatScaled
+clear LonScaled
+
+for i=1:25
+    clf;
+Z = double(O3Scaled(modelnumber,:,:,i));
+Z=reshape(Z,700,400);  %700 rows and 400 columns
+%Z=transpose(Z);
+
 % Display the raw data
 figure(1)
-mesh(X,Y,Z)
+mesh(X,Y,Z)   %UNDO IT
+title(sprintf('Mesh figure at time %d:00 ', (i-1)));
+pause(0)
 % The data you will have from the NetCDF files will be X, Y and Z where
 % X & Y are the Lat and Lon values in a vector form
 % Z represents the ozone in a 2D array
 % The data provided here as X, Y, Z is in the corresponding formats.
+end
 
-%% Create a display of the data from the NetCDF files like this
+
+
+
+%% Create a display of the data
+% create a mesh of values
+[X] = 30.05:0.1:69.95; % create X value
+[Y] = -24.95:0.1:44.95;% create Y values
 [X,Y] = meshgrid(X, Y);
 
 %City Advance visibility
