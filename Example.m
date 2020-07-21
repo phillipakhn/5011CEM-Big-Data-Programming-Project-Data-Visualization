@@ -77,6 +77,66 @@ disp('4 for Normal Vision ');
 statusCB=input(' Status = ');
 %https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7
 
+if statusCB==1   %Contrasting colors for deuteranopia and protanopia
+    C1=[255,194,10];
+    C1=C1/255;
+    C2=[12,123,220];
+    C2=C2/255;
+    C3=[75, 0, 146];
+    C3=C3/255;
+    C4=[153, 79, 0];
+    C4=C4/255;
+    xxx= 'bluish ';
+    yyy='black';
+    
+    else if statusCB==2
+        C1=[211,95,183];
+    C1=C1/255;
+    C2=[220,50,32];
+    C2=C2/255;
+    xxx= ' light turquoise';
+    yyy=' light red/brown';
+    C3=[26, 255, 26];
+    C3=C3/255;
+    C4=[153, 79, 0];
+    C4=C4/255;
+    
+    
+    
+        else if statusCB==3
+    C1=[0,0,0];
+    C2=[1,1,1];
+    C3=[1,1,1];
+    xxx='light intensity';
+    C4=[1,1,1];
+    yyy=' bright Points';
+    
+    
+            else if statusCB==4
+        C1=[0.5 0.7 0.5];
+    C2='blue';
+    xxx='blue';
+    C3='blue';
+    C4='red';
+    yyy=' red';
+                else
+                    clc;
+                    disp('Wrong input')
+                    pause(0.5);
+                    
+    end
+    
+            end
+        end
+    end
+    end
+    
+    for i=1:25
+    
+    Z = double(O3Scaled(modelnumber,:,:,i));
+    Z=reshape(Z,700,400);
+
+    
 figure(2);
 clf
 % Create the map
