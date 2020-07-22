@@ -1,6 +1,6 @@
 
-%clc
-%clear all
+clc
+clear all
 load('LatScaled.mat')   %Loading .mat files that contain data
 load('LonScaled.mat')
 load('o3Scaled.mat')
@@ -17,6 +17,7 @@ end
 modelnumber=input('Please Enter Model No: ')
 x1=1;
 end
+
 
 %%
 % Create some data
@@ -66,6 +67,8 @@ else
     end
 end
 
+statusCB=0;
+while (statusCB ~=1 && statusCB  ~=2 && statusCB ~=3 && statusCB ~=4) 
 %COLOR BLINDNESS CODE
 
 disp('');
@@ -78,65 +81,65 @@ statusCB=input(' Status = ');
 %https://davidmathlogic.com/colorblind/#%23000000-%23E69F00-%2356B4E9-%23009E73-%23F0E442-%230072B2-%23D55E00-%23CC79A7
 
 if statusCB==1   %Contrasting colors for deuteranopia and protanopia
-    C1=[255,194,10];
-    C1=C1/255;
-    C2=[12,123,220];
-    C2=C2/255;
-    C3=[75, 0, 146];
-    C3=C3/255;
-    C4=[153, 79, 0];
-    C4=C4/255;
-    xxx= 'bluish ';
-    yyy='black';
-    
-    else if statusCB==2
-        C1=[211,95,183];
-    C1=C1/255;
-    C2=[220,50,32];
-    C2=C2/255;
-    xxx= ' light turquoise';
-    yyy=' light red/brown';
-    C3=[26, 255, 26];
-    C3=C3/255;
-    C4=[153, 79, 0];
-    C4=C4/255;
-    
-    
-    
-        else if statusCB==3
-    C1=[0,0,0];
-    C2=[1,1,1];
-    C3=[1,1,1];
-    xxx='light intensity';
-    C4=[1,1,1];
-    yyy=' bright Points';
-    
-    
-            else if statusCB==4
-        C1=[0.5 0.7 0.5];
-    C2='blue';
-    xxx='blue';
-    C3='blue';
-    C4='red';
-    yyy=' red';
-                else
-                    clc;
-                    disp('Wrong input')
-                    pause(0.5);
-                    
-    end
-    
-            end
+C1=[255,194,10];
+C1=C1/255;
+C2=[12,123,220];
+C2=C2/255;
+C3=[75, 0, 146];
+C3=C3/255;
+C4=[153, 79, 0];
+C4=C4/255;
+xxx= 'bluish ';
+yyy='black';
+
+else if statusCB==2
+    C1=[211,95,183];
+C1=C1/255;
+C2=[220,50,32];
+C2=C2/255;
+xxx= ' light turquoise';
+yyy=' light red/brown';
+C3=[26, 255, 26];
+C3=C3/255;
+C4=[153, 79, 0];
+C4=C4/255;
+
+
+
+    else if statusCB==3
+C1=[0,0,0];
+C2=[1,1,1];
+C3=[1,1,1];
+xxx='light intensity';
+C4=[1,1,1];
+yyy=' bright Points';
+
+
+        else if statusCB==4
+    C1=[0.5 0.7 0.5];
+C2='blue';
+xxx='blue';
+C3='blue';
+C4='red';
+yyy=' red';
+            else
+                clc;
+                disp('Wrong input')
+                pause(0.5);
+                
+end
+
         end
     end
-    end
-    
-    for i=1:25
-    
-    Z = double(O3Scaled(modelnumber,:,:,i));
-    Z=reshape(Z,700,400);
+end
+end
 
-    
+for i=1:25
+
+Z = double(O3Scaled(modelnumber,:,:,i));
+Z=reshape(Z,700,400);
+
+
 figure(2);
 clf
 % Create the map
@@ -178,12 +181,3 @@ pause(0.5)
 
 
 end
-
-% display the data
-NumContours = 10;
-contourfm(X, Y, Z, NumContours)
-
-% This is a bit advanced, sets the visibility of the various parts of the
-% plot so the land, cities etc shows through.
-Plots = findobj(gca,'Type','Axes');
-Plots.SortMethod = 'depth';
