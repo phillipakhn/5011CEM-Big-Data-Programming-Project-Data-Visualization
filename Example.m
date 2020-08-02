@@ -7,7 +7,14 @@ load('o3Scaled.mat')
 
 %o3Scaled format is = Time Model,700(Lon),400(Lat),Time (25 hours)
 
-disp('There are total of 7 models');
+disp('There are total of 7 models. 1(Chimere Model)');
+disp('(1) Siliam Model');
+disp('(2) Match Model');
+disp('(3) Ensemble Model');
+disp('(4) Chimere Model');
+disp('(5) Eurad Model');
+disp('(6) Mocage Model');
+disp('(7) Emep Model');
 modelnumber=0;
 x1=0;
 while modelnumber<=0 || modelnumber>7 % CHECKING ERROR
