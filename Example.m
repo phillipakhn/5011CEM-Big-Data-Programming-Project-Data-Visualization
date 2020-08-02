@@ -170,7 +170,7 @@ str = 'Lakes and Rivers = ';
 str=strcat(str,xxx);
 str2= 'Cities = Marker with Color ';
 str2=strcat(str2,yyy);
-str3='Ozone can be scene as variation of colors over map';
+str3='Ozone can be seen as variation of colors over map';
 dim = [.1 .5 .3 .3];
 dim2 = [.1 .54 .34 .34];
 dim3= [.1 .58 .38 .38];
