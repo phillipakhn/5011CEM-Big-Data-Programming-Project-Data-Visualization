@@ -7,7 +7,7 @@ load('o3Scaled.mat')
 
 %o3Scaled format is = Time Model,700(Lon),400(Lat),Time (25 hours)
 
-disp('There are total of 7 models. 1(Chimere Model)');
+disp('There are total of 7 models.');
 disp('(1) Siliam Model');
 disp('(2) Match Model');
 disp('(3) Ensemble Model');
