@@ -1,6 +1,6 @@
 # Big-Data-Visualization-5011-CEM
 
-To run this code place these files https://drive.google.com/drive/folders/1p7v0di_pPrQELZ_5VaBXsTpFwpGXBb7B?usp=sharing along with the Example.m in the same folder then run Example.m from Matlab
+To run this code place these files https://github.com/phillipakhn/5011CEM-Big-Data-Programming-Project-Data-Visualization/releases/tag/v1.0.0 along with the Example.m in the same folder then run Example.m from Matlab
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%% CODE DOCUMENTATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
